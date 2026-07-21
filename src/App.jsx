@@ -1,34 +1,11 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
-
-const ProtectedRoute = ({ children }) => {
-  const token = localStorage.getItem('token');
-  const userStr = localStorage.getItem('user');
-
-  if (!token || !userStr) {
-    return <Navigate to="/login" replace />;
-  }
-
-  return children;
-};
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import AppRoutes from './app/routes';
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route
-          path="/"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
-        {/* Catch all route */}
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+      <AppRoutes />
     </BrowserRouter>
   );
 }
