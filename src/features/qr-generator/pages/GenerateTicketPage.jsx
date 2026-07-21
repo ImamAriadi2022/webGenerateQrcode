@@ -31,7 +31,7 @@ const GenerateTicketPage = () => {
   return (
     <div style={{
       minHeight: '100vh',
-      background: '#0D1628',
+      background: 'var(--pf-bg)',
       display: 'flex', flexDirection: 'column',
       fontFamily: "'Inter', sans-serif",
     }}>
@@ -54,9 +54,9 @@ const GenerateTicketPage = () => {
             <div style={{
               width: '100%', marginBottom: '24px',
               padding: '16px 20px',
-              background: 'rgba(0,210,255,0.06)',
-              border: '1px solid rgba(0,210,255,0.2)',
-              borderRadius: '12px', color: '#8BA3BC',
+              background: 'var(--pf-accent-glow)',
+              border: '1px solid var(--pf-border)',
+              borderRadius: '12px', color: 'var(--pf-text2)',
               fontSize: '14px',
               textAlign: 'center'
             }}>
@@ -69,13 +69,13 @@ const GenerateTicketPage = () => {
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '64px 0', flex: 1 }}>
               <div style={{
                 width: '56px', height: '56px',
-                border: '3px solid #1E3A5F',
-                borderTopColor: '#00D2FF',
+                border: '3px solid var(--pf-border)',
+                borderTopColor: 'var(--pf-accent)',
                 borderRadius: '50%',
                 animation: 'spin 0.8s linear infinite',
                 marginBottom: '20px',
               }} />
-              <p style={{ color: '#8BA3BC', fontWeight: '600' }}>Memuat data area...</p>
+              <p style={{ color: 'var(--pf-text2)', fontWeight: '600' }}>Memuat data area...</p>
             </div>
           )}
 
@@ -84,21 +84,21 @@ const GenerateTicketPage = () => {
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '64px 0', flex: 1 }}>
               <div style={{
                 width: '80px', height: '80px', borderRadius: '50%',
-                background: 'rgba(239,83,80,0.1)',
-                border: '1px solid rgba(239,83,80,0.2)',
+                background: 'var(--pf-red-glow)',
+                border: '1px solid var(--pf-red)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 marginBottom: '20px',
               }}>
-                <AlertCircle style={{ width: '36px', height: '36px', color: '#EF5350' }} />
+                <AlertCircle style={{ width: '36px', height: '36px', color: 'var(--pf-red)' }} />
               </div>
-              <h2 style={{ color: '#fff', fontWeight: '800', fontSize: '22px', marginBottom: '8px' }}>Tidak ada area</h2>
-              <p style={{ color: '#8BA3BC', marginBottom: '24px', fontSize: '14px', maxWidth: '360px' }}>
+              <h2 style={{ color: 'var(--pf-text)', fontWeight: '800', fontSize: '22px', marginBottom: '8px' }}>Tidak ada area</h2>
+              <p style={{ color: 'var(--pf-text2)', marginBottom: '24px', fontSize: '14px', maxWidth: '360px' }}>
                 Akun admin Anda belum terasosiasi dengan area gerbang parkir. Silahkan hubungi administrator utama.
               </p>
               <button onClick={logout} style={{
-                padding: '10px 24px', background: '#1A2D47',
-                border: '1px solid #1E3A5F', borderRadius: '10px',
-                color: '#8BA3BC', fontWeight: '600', cursor: 'pointer',
+                padding: '10px 24px', background: 'var(--pf-card2)',
+                border: '1px solid var(--pf-border)', borderRadius: '10px',
+                color: 'var(--pf-text2)', fontWeight: '600', cursor: 'pointer',
                 fontFamily: "'Inter', sans-serif",
               }}>Logout</button>
             </div>
@@ -136,16 +136,16 @@ const GenerateTicketPage = () => {
         .main-content {
           flex: 1;
           padding: 32px;
-          background: #0D1628;
+          background: var(--pf-bg);
           overflow-y: auto;
         }
 
         .section-card {
-          background: #132136;
-          border: 1px solid #1E3A5F;
+          background: var(--pf-card);
+          border: 1px solid var(--pf-border);
           border-radius: 18px;
           padding: 24px;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+          box-shadow: var(--pf-shadow);
         }
 
         @keyframes spin { to { transform: rotate(360deg); } }

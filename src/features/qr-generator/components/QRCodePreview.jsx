@@ -21,21 +21,21 @@ const QRCodePreview = ({
         borderRadius: '24px',
         padding: '24px',
         marginBottom: '24px',
-        boxShadow: '0 20px 50px rgba(0,0,0,0.5)',
+        boxShadow: 'var(--pf-shadow)',
         position: 'relative',
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        border: '1px solid #E2E8F0',
+        border: '1px solid var(--pf-border)',
       }}>
         <div style={{
           position: 'absolute', top: '-1px', left: '50%', transform: 'translateX(-50%)',
-          background: '#132136', width: '40px', height: '12px', borderRadius: '0 0 10px 10px',
+          background: 'var(--pf-bg)', width: '40px', height: '12px', borderRadius: '0 0 10px 10px',
         }} />
 
         <div style={{ textAlign: 'center', marginBottom: '16px', width: '100%' }}>
-          <h4 style={{ color: '#0066AA', fontWeight: '800', fontSize: '16px', margin: 0, letterSpacing: '1px' }}>
+          <h4 style={{ color: 'var(--pf-accent2)', fontWeight: '800', fontSize: '16px', margin: 0, letterSpacing: '1px' }}>
             PARKFINDER E-TICKET
           </h4>
           <span style={{ color: '#64748B', fontSize: '11px', fontWeight: '600', textTransform: 'uppercase' }}>
@@ -143,11 +143,11 @@ const QRCodePreview = ({
       <div style={{
         display: 'flex', alignItems: 'center', gap: '8px',
         padding: '10px 24px',
-        background: isTimeRunningOut ? 'rgba(239,83,80,0.12)' : 'rgba(0,210,255,0.08)',
-        border: `1px solid ${isTimeRunningOut ? 'rgba(239,83,80,0.3)' : 'rgba(0,210,255,0.2)'}`,
+        background: isTimeRunningOut ? 'var(--pf-red-glow)' : 'var(--pf-accent-glow)',
+        border: `1px solid ${isTimeRunningOut ? 'var(--pf-red)' : 'var(--pf-accent)'}`,
         borderRadius: '24px',
         marginBottom: '20px',
-        color: isTimeRunningOut ? '#EF5350' : '#00D2FF',
+        color: isTimeRunningOut ? 'var(--pf-red)' : 'var(--pf-accent)',
         fontWeight: '700', fontSize: '15px',
       }}>
         {isTimeRunningOut && <AlertCircle style={{ width: '16px', height: '16px' }} />}
@@ -159,19 +159,19 @@ const QRCodePreview = ({
           onClick={handleCancelTicket}
           style={{
             background: 'transparent', border: 'none',
-            color: '#EF5350', fontSize: '14px', fontWeight: '600',
+            color: 'var(--pf-red)', fontSize: '14px', fontWeight: '600',
             cursor: 'pointer', textDecoration: 'underline',
             fontFamily: "'Inter', sans-serif",
           }}
         >
           Batalkan Tiket
         </button>
-        <span style={{ color: '#4A6080' }}>|</span>
+        <span style={{ color: 'var(--pf-text3)' }}>|</span>
         <button
           onClick={handleResetTicket}
           style={{
             background: 'transparent', border: 'none',
-            color: '#4A6080', fontSize: '14px', fontWeight: '600',
+            color: 'var(--pf-text3)', fontSize: '14px', fontWeight: '600',
             cursor: 'pointer', textDecoration: 'underline',
             fontFamily: "'Inter', sans-serif",
           }}
